@@ -6,20 +6,13 @@ The DS Assistant is a voice-controlled application with features such as screen 
 
 ---
 
-## Prerequisites
-
-1. **Docker**: Ensure you have Docker installed on your system.
-   - [Download Docker](https://www.docker.com/products/docker-desktop/).
-
----
-
 ## Building the Docker Image
 
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_name>
+   git clone https://github.com/benmoumen/deepseek-assistant
+   cd deepseek-assistant
    ```
 
 2. Build the Docker image:
