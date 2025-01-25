@@ -93,6 +93,8 @@ def capture_and_extract_text():
 
 # Function to listen for voice commands
 def listen_for_command():
+    command = input("Type your command: ")
+    return command
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening for a command...")
@@ -132,15 +134,15 @@ def infer_intent(command):
 
 # Function to analyze text using OpenAI DeepSeek model
 def analyze_text_with_deepseek(text):
-    response = deepseek_client.chat_completion(
+    response = deepseek_client.chat.completions.create(
         model="deepseek-chat",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": text}
-        ]
+        ],
+        stream=False
     )
-    return response["choices"][0]["message"]["content"]
-
+    return response.choices[0].message.content
 
 
 # Main loop for voice-controlled interaction
